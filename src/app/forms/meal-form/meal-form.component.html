@@ -1,0 +1,26 @@
+<form>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="nameInput">
+    </div>
+
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select name="category" class="form-control" id="category" [(ngModel)]="selectCategoryInput">
+            <option  *ngFor="let category of categories" value={{category.id}}>{{category.name}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" name="price" [(ngModel)]="priceInput">
+    </div>
+
+    <div class="buttons form-group">
+        <button class="btn btn-warning" (click)="resetForm()">Reset</button>
+
+        <button class="btn btn-light" (click)="saveMeal()">Save</button>
+    </div>
+</form>
+
+

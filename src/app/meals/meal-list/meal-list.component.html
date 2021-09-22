@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-9">
+        <app-filter [label]="filter.label" (newEventEmit)="filtering($event)"></app-filter>
+    </div>
+    <div class="col-3">
+        <app-pagination (mealsPaginatedEmiter)="paginatedMeals($event)" [mealsCount]="mealCount"></app-pagination>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <app-table [headerList] = "headerList" [entities]="meals"></app-table>
+    </div>
+</div>

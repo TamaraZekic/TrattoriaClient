@@ -1,0 +1,17 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th *ngFor="let item of headerList" class="{{item.class}}">{{item.label}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entity of entities">
+        <ng-container *ngFor="let header of headerList">
+            <td *ngIf="header.field">{{this.getField(entity, header.field)}}</td>
+        </ng-container>
+        <td *ngIf="buttons.length > 0">
+            <button *ngFor="let button of buttons" class="{{button.class}}" (click)="onButtonClick(entity, button.label)">{{button.label}}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

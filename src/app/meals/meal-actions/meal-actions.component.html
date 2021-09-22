@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-8">
+
+        <div class="row">
+            <div class="col-8">
+                <app-filter [label] = "filter.label" (newEventEmit)="filtering($event)"></app-filter>
+            </div>
+            <div class="col-4">
+                <app-pagination (mealsPaginatedEmiter)="paginatedMeals($event)" [mealsCount]="mealCount"></app-pagination>
+            </div>
+        </div>
+        
+        <app-table 
+            [headerList]="headerList" 
+            [entities]="meals" 
+            [buttons]="buttons" 
+            (buttonClickEmitter)="onAction($event)"
+        ></app-table>
+    </div>
+
+    <div class="col-4">
+        <app-meal-form (emiter)="getMeals($event)" [meal]="currentMeal" ></app-meal-form>
+    </div>
+</div>
+

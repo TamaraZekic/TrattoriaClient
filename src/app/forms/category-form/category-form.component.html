@@ -1,0 +1,23 @@
+<form>
+    <div class="form-group row">
+        <div class="col-4">
+            <label for="category">Category</label> <br>
+            <input type="text" name="category" class="form-control" [(ngModel)]="categoryInput">
+        </div>
+        
+    </div>
+
+    <div class="buttons form-group row">
+        <div class="col-2">
+            <button class="btn btn-light form-control" (click)="addCategory()">Add</button>
+        </div>
+        
+    </div>
+</form>
+
+<app-table 
+    [entities] = "categories"
+    [headerList]= "headerList"
+    [buttons]= "buttons"
+    (buttonClickEmitter)="onAction($event)"
+></app-table>
